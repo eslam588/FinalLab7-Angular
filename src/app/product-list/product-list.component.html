@@ -1,0 +1,25 @@
+<div class="container">
+
+<h1 class="text-center">Products</h1>
+<div class="row">
+    <label class="m-3 ">
+        <input type="text" [(ngModel)]="filtertext" class="p-2 border-2 rounded-pill w-50" placeholder="filter by title or description">
+    </label>
+    
+    <app-product-card class="col-4" *ngFor="let product of allProduct|filter:filtertext:['title','description']" [productdata]="product" (onSelectedProduct)="getSelectedProduct($event)" ></app-product-card>
+
+    
+</div>
+
+<app-favourite-product>
+    <h3>favourite items</h3>
+    <ul>
+        <li *ngFor="let product of productdata" class="bg-primary p-4 m-2 text-light">{{product.title}}</li>
+    </ul>
+</app-favourite-product>
+<hr>
+<app-product-cart></app-product-cart>
+
+</div>
+
+

@@ -1,0 +1,11 @@
+<div class="card my-2 border-3">
+    <img class="card-img-top" height="300px" src="{{product.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><a [routerLink]="['/productlist',product.id]">{{product.title|stringSlice:20}}</a></h5>
+      <p class="card-text" height="1000px">{{product.description|stringSlice:30}}</p>
+      <p class="card-text">{{product.price|currency:'USD'}}</p>
+      <p class="card-text" (click)="setproductdata(product)" appColors >add to cart</p>
+      <p class="card-text" (click)="productselected(product)">add  to favourite</p>
+      <input type="button" (click)="viewdetails(product.id)" value="view details"/>
+    </div>
+  </div>

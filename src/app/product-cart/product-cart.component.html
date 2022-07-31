@@ -1,0 +1,10 @@
+<h2>cart items</h2>
+
+<ul>
+    <li *ngFor="let item of productdata" class="bg-danger text-light p-3 m-2 d-flex align-items-center justify-content-between">
+        <p>{{item.title}}</p>
+        <p (click)="deleteproduct(item)" >delete</p>
+    </li>
+</ul>
+
+
